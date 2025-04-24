@@ -64,6 +64,7 @@ Exemple d'appel :
 
 ### 1. Clonage du projet
     Pour récupérer ce projet via GitHub, utilisez la commande suivante :
+    git clone  https://github.com/JeanPaulMUKAD/Saisie_des_cotes.git
 
 ## Auteur
     Projet par développé KASOMBW MUKAD Jean-Paul

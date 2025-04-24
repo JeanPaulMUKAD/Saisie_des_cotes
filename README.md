@@ -50,6 +50,8 @@ Ce projet inclut plusieurs fonctionnalités clés :
     Cliquez sur « Enregistrer ».
     Les données seront stockées dans la base SQLite avec la moyenne calculée automatiquement.
 
+6. captures
+    Vous trouverez toutes les captures dans le dossier captures
 
 
 Exemple d'appel :

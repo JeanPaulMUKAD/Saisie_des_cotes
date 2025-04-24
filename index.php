@@ -17,6 +17,15 @@ foreach ($etudiants as $e) {
   }
 }
 
+// Suppression des cotes liées à un étudiant
+if (isset($_GET['supprimer_etudiant'])) {
+  $etudiant = $_GET['supprimer_etudiant'];
+  $stmt = $db->prepare("DELETE FROM cotes WHERE etudiant = :etudiant");
+  $stmt->bindValue(':etudiant', $etudiant);
+  $stmt->execute();
+  echo "<p class='text-red-500 font-bold'>Toutes les cotes de l'étudiant $etudiant ont été supprimées.</p>";
+}
+
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $cours_id = $_POST['cours'];
@@ -97,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result->reset();
     if ($rowCount > 0) {
       echo '<table class="w-full table-auto mt-4 border-collapse border border-gray-300">';
-      echo '<thead><tr class="bg-gray-200"><th class="px-4 py-2 border border-gray-300">Étudiant</th><th class="px-4 py-2 border border-gray-300">Cours</th><th class="px-4 py-2 border border-gray-300">TD</th><th class="px-4 py-2 border border-gray-300">TP</th><th class="px-4 py-2 border border-gray-300">Interro</th><th class="px-4 py-2 border border-gray-300">Moyenne</th></tr></thead>';
+      echo '<thead><tr class="bg-gray-200"><th class="px-4 py-2 border border-gray-300">Étudiant</th><th class="px-4 py-2 border border-gray-300">Cours</th><th class="px-4 py-2 border border-gray-300">TD</th><th class="px-4 py-2 border border-gray-300">TP</th><th class="px-4 py-2 border border-gray-300">Interro</th><th class="px-4 py-2 border border-gray-300">Moyenne</th><th class="px-4 py-2 border border-gray-300">Actions</th></tr></thead>';
       echo '<tbody>';
       while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         echo '<tr>';
@@ -107,6 +116,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<td class="border px-4 py-2">' . htmlspecialchars($row['tp']) . '</td>';
         echo '<td class="border px-4 py-2">' . htmlspecialchars($row['interro']) . '</td>';
         echo '<td class="border px-4 py-2">' . htmlspecialchars($row['moyenne']) . '</td>';
+        echo '<td class="border px-4 py-2 text-center">';
+        echo '<a href="?supprimer_etudiant=' . urlencode($row['etudiant']) . '" class="text-red-500 hover:underline" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer toutes les cotes de cet étudiant ?\');">Supprimer</a>';
+        echo '</td>';
         echo '</tr>';
       }
       echo '</tbody></table>';

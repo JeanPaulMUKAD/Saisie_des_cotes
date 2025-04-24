@@ -34,6 +34,25 @@ Ce projet inclut plusieurs fonctionnalités clés :
     - Créer une base de données SQLite appelée cotes.sqlite
     - Créer les tables nécessaires pour enregistrer les cours et les cotes
     - Insérer des cours d'exemple (Mathématiques, Informatique, Physique)
+    * Remarque : cette étape ne doit être faite qu'une seule fois.
+
+4. Lancement du serveur PHP
+    Si vous n'avez pas de serveur Apache, vous pouvez lancer PHP en ligne de commande avec :
+    * php -S localhost:8080
+
+    Puis, ouvrez votre navigateur et accédez à :
+    * http://localhost:8080/index.php
+    Cela ouvrira le formulaire de saisie des côtes.
+
+5. Utilisation du formulaire
+    Choisissez un cours dans la liste.
+    Entrez les cotes pour chaque étudiant (TD, TP, Interro, Projet).
+    Cliquez sur « Enregistrer ».
+    Les données seront stockées dans la base SQLite avec la moyenne calculée automatiquement.
+
+
+
+Exemple d'appel :
 
 ## Technologies
 

@@ -26,8 +26,7 @@ Ce projet PHP permet aux enseignants de saisir les cotes des étudiants et de co
 
 ### 1. Clonage du projet
 
-git clone https://github.com/<ton-utilisateur>/gestion-cotes.git
-cd gestion-cotes 
+gh repo clone JeanPaulMUKAD/Saisie_des_cotes
 
 ## Auteur
 KASOMBW MUKAD Jean-Paul

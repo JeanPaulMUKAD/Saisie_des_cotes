@@ -1,22 +1,39 @@
 #  Service de Gestion des Cotes
 
-Ce projet PHP permet aux enseignants de saisir les cotes des étudiants et de consulter les résultats via une API REST.
+Ce projet PHP propose une solution simple pour permettre aux enseignants de gérer et saisir les cotes des étudiants. 
+Il utilise une base de données SQLite et expose une API REST pour consulter les résultats.
 
 ## Fonctionnalités
+Ce projet inclut plusieurs fonctionnalités clés :
 
-- Choix d'un cours via liste déroulante.
-- Attribution de cotes : TD, TP, Interro.
-- Calcul automatique de la moyenne sur 10.
-- Données des étudiants récupérées depuis `http://localhost:8000/api.php`.
-- Exposition d'une API REST des cotes (`api.php`).
+    - Un formulaire permettant de sélectionner un cours via une liste déroulante.
+    - La possibilité pour l'enseignant de saisir les résultats de différents types d'évaluations :
+    - Travaux Dirigés (TD)
+    - Travaux Pratiques (TP)
+    - Interrogatoires
+    - Projets
+    - Données des étudiants récupérées depuis `http://localhost:8000/api.php`.
+    - Exposition d'une API REST des cotes (`api.php`).
 
-## Installation
+## Installation et mise en place
 
-1. Placez tous les fichiers dans un dossier web (ex: `www/gestion-cotes/`).
-2. Exécutez `db_init.php` **une seule fois**.
-4. Lancer le fichier `index.php` à l'aide la commande: php -S localhost:8080 tout en se rassurant que le serveur local est lancé
-3. Une fois le formulaire ouvert, saisir les notes.
-4. Accédez aux données via `api.php`.
+1. Préparation de l'environnement
+    Assurez-vous d'avoir un environnement de développement local fonctionnel avec :
+    PHP installé (version 7.4 ou supérieure recommandée)
+    Un serveur local (Apache ou simplement PHP en ligne de commande)
+
+2. Téléchargement des fichiers
+    Placez tous les fichiers du projet dans un dossier dédié sur votre serveur local, par exemple :
+    * www/gestion-cotes/
+
+3. Initialisation de la base de données
+    Avant d'utiliser le formulaire, il faut créer la base de données SqlLite. Pour cela :
+    Lancez le fichier db_init.php dans votre navigateur ou en ligne de commande.
+
+    * Cela va :
+    - Créer une base de données SQLite appelée cotes.sqlite
+    - Créer les tables nécessaires pour enregistrer les cours et les cotes
+    - Insérer des cours d'exemple (Mathématiques, Informatique, Physique)
 
 ## Technologies
 

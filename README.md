@@ -56,13 +56,12 @@ Exemple d'appel :
 
 ## Technologies
 
-- PHP
-- SQLite
-- Tailwind CSS
+    - PHP pour le backend
+    - SQLite pour la base de données légère et embarquée
+    - Tailwind CSS pour le style rapide et moderne du formulaire
 
 ### 1. Clonage du projet
-
-gh repo clone JeanPaulMUKAD/Saisie_des_cotes
+    Pour récupérer ce projet via GitHub, utilisez la commande suivante :
 
 ## Auteur
-KASOMBW MUKAD Jean-Paul
+    Projet par développé KASOMBW MUKAD Jean-Paul

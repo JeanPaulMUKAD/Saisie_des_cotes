@@ -1,78 +1,56 @@
-#  Service de Gestion des Cotes
+# Service de Gestion des Cotes
 
-Ce projet PHP propose une solution simple pour permettre aux enseignants de gérer et saisir les cotes des étudiants. 
-Il utilise une base de données SQLite et expose une API REST pour consulter les résultats.
+Ce projet PHP propose une solution simple pour permettre aux enseignants de gérer et saisir les cotes des étudiants. Il utilise une base de données SQLite et expose une API REST pour consulter les résultats.
 
 ## Fonctionnalités
 Ce projet inclut plusieurs fonctionnalités clés :
 
-    - Un formulaire permettant de sélectionner un cours via une liste déroulante.
-    - La possibilité pour l'enseignant de saisir les résultats de différents types d'évaluations :
+- Un formulaire permettant de sélectionner un cours via une liste déroulante.
+- La possibilité pour l'enseignant de saisir les résultats de différents types d'évaluations :
     - Travaux Dirigés (TD)
     - Travaux Pratiques (TP)
     - Interrogatoires
     - Projets
-    - Données des étudiants récupérées depuis `https://saisie-des-cotes.onrender.comapi.php`.
-    - Exposition d'une API REST des cotes (`api.php`).
+- Données des étudiants récupérées depuis `https://saisie-des-cotes.onrender.com/api.php`.
+- Exposition d'une API REST des cotes (`api.php`).
 
-## Installation et mise en place
+## Utilisation
 
-1. Préparation de l'environnement
-    Assurez-vous d'avoir un environnement de développement local fonctionnel avec :
-    PHP installé (version 7.4 ou supérieure recommandée)
-    Un serveur local (Apache ou simplement PHP en ligne de commande)
+Le projet est déployé gratuitement sur Render et accessible à l'adresse suivante :  
+[https://saisie-des-cotes.onrender.com/](https://saisie-des-cotes.onrender.com/)
 
-2. Téléchargement des fichiers
-    Placez tous les fichiers du projet dans un dossier dédié sur votre serveur local, par exemple :
-    * www/gestion-cotes/
+### Étapes pour utiliser le formulaire :
 
-3. Initialisation de la base de données
-    Avant d'utiliser le formulaire, il faut créer la base de données SqlLite. Pour cela :
-    Lancez le fichier db_init.php dans votre navigateur ou en ligne de commande.
-
-    * Cela va :
-    - Créer une base de données SQLite appelée cotes.sqlite
-    - Créer les tables nécessaires pour enregistrer les cours et les cotes
-    - Insérer des cours d'exemple (Mathématiques, Informatique, Physique)
-    * Remarque : cette étape ne doit être faite qu'une seule fois.
-
-4. Lancement du serveur PHP
-    Si vous n'avez pas de serveur Apache, vous pouvez lancer PHP en ligne de commande avec :
-    * php -S localhost:8080
-
-    Puis, ouvrez votre navigateur et accédez à :
-    * http://localhost:8080/index.php
-    Cela ouvrira le formulaire de saisie des côtes.
-
-5. Utilisation du formulaire
-    Choisissez un cours dans la liste.
-    Entrez les cotes pour chaque étudiant (TD, TP, Interro, Projet).
-    Cliquez sur « Enregistrer ».
-    Les données seront stockées dans la base SQLite avec la moyenne calculée automatiquement.
-
-6. captures
-    Vous trouverez toutes les captures dans le dossier captures
-
-
-Exemple d'appel :
+1. Accédez à l'URL ci-dessus.
+2. Choisissez un cours dans la liste déroulante.
+3. Entrez les cotes pour chaque étudiant (TD, TP, Interro, Projet).
+4. Cliquez sur « Enregistrer ».
+5. Les données seront stockées dans la base SQLite avec la moyenne calculée automatiquement.
 
 ## Technologies
 
-    - PHP pour le backend
-    - SQLite pour la base de données légère et embarquée
-    - Tailwind CSS pour le style rapide et moderne du formulaire
+- PHP pour le backend
+- SQLite pour la base de données légère et embarquée
+- Tailwind CSS pour le style rapide et moderne du formulaire
 
-### 1. Clonage du projet
-    Pour récupérer ce projet via GitHub, utilisez la commande suivante :
-    git clone  https://github.com/JeanPaulMUKAD/Saisie_des_cotes.git
+### Clonage du projet
+
+Pour récupérer ce projet via GitHub, utilisez la commande suivante :  
+`git clone https://github.com/JeanPaulMUKAD/Saisie_des_cotes.git`
 
 ## Auteur
-    Projet par développé KASOMBW MUKAD Jean-Paul
 
-## Affichage des donnees
-    {etudiant	"Nabil MUTOMBO"
-    cours	"Mathématiques"
-    td	6
-    tp	8
-    interro	10
-    moyenne	6 }
+Projet développé par KASOMBW MUKAD Jean-Paul
+
+## Exemple d'affichage des données
+
+```json
+{
+    "etudiant": "Nabil MUTOMBO",
+    "cours": "Mathématiques",
+    "td": 6,
+    "tp": 8,
+    "interro": 10,
+    "moyenne": 6
+}
+```

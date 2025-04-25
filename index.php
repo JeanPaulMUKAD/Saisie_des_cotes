@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3('db.sqlite');
+$db = new SQLite3('/tmp/db.sqlite');
 
 // Cours
 $cours = $db->query("SELECT * FROM cours");

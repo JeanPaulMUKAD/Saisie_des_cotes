@@ -12,7 +12,7 @@ Ce projet inclut plusieurs fonctionnalités clés :
     - Travaux Pratiques (TP)
     - Interrogatoires
     - Projets
-    - Données des étudiants récupérées depuis `http://localhost:8000/api.php`.
+    - Données des étudiants récupérées depuis `https://saisie-des-cotes.onrender.comapi.php`.
     - Exposition d'une API REST des cotes (`api.php`).
 
 ## Installation et mise en place

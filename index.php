@@ -5,7 +5,7 @@ $db = new SQLite3('db.sqlite');
 $cours = $db->query("SELECT * FROM cours");
 
 // Étudiants via API externe
-$etudiants = json_decode(file_get_contents('http://localhost:8000/api.php'), true);
+$etudiants = json_decode(file_get_contents('https://saisie-des-cotes.onrender.com/api.php'), true);
 
 // Normalisation des données pour s'assurer qu'on a bien une liste de noms
 $liste_noms = [];

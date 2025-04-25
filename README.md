@@ -68,3 +68,11 @@ Exemple d'appel :
 
 ## Auteur
     Projet par développé KASOMBW MUKAD Jean-Paul
+
+## Affichage des donnees
+    {etudiant	"Nabil MUTOMBO"
+    cours	"Mathématiques"
+    td	6
+    tp	8
+    interro	10
+    moyenne	6 }
